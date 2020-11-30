@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import com.example.bankraft.databinding.ActivityHomeBinding;
 
@@ -51,11 +52,19 @@ public class HomeActivity extends AppCompatActivity {
             SideBarView sideBarView = new SideBarView(HomeActivity.this);
             binding.viewSlidebar.addView(sideBarView);
 
-            binding.goSidemenu.setOnClickListener(view2 -> {
-                sideBarView.setEventListener(this::closeMenu);
+                sideBarView.setEventListener(new SideBarView.EventListener() {
+                    @Override
+                    public void btnCancel() {
+                        closeMenu();
+                    }
+
+                    @Override
+                    public void logOut() {
+                        Toast.makeText(HomeActivity.this, "로그아웃", Toast.LENGTH_SHORT).show();
+                    }
+                });
                 showMenu();
             });
-        });
     }
 
     public void closeMenu() {
@@ -66,6 +75,15 @@ public class HomeActivity extends AppCompatActivity {
             binding.flSlide.setVisibility(View.GONE);
             binding.flSlide.setEnabled(false);
             binding.idMain.setEnabled(true);
+            binding.goSidemenu.setEnabled(true);
+            binding.tradingList.setEnabled(true);
+            binding.goTradingTx.setEnabled(true);
+            binding.newAccount.setEnabled(true);
+            binding.switch1.setEnabled(true);
+            binding.homeSearch.setEnabled(true);
+            binding.notification.setEnabled(true);
+            binding.recyclerView.setEnabled(true);
+            Toast.makeText(this, "홈 : "+binding.idMain.isEnabled()+"\n"+"사이드 : " + binding.flSlide.isEnabled(), Toast.LENGTH_SHORT).show();
         }, 180);
     }
 
@@ -76,6 +94,15 @@ public class HomeActivity extends AppCompatActivity {
         binding.flSlide.setVisibility(View.VISIBLE);
         binding.flSlide.setEnabled(true);
         binding.idMain.setEnabled(false);
+        binding.goSidemenu.setEnabled(false);
+        binding.tradingList.setEnabled(false);
+        binding.goTradingTx.setEnabled(false);
+        binding.newAccount.setEnabled(false);
+        binding.switch1.setEnabled(false);
+        binding.homeSearch.setEnabled(false);
+        binding.notification.setEnabled(false);
+        binding.recyclerView.setEnabled(false);
+        Toast.makeText(this, "홈 : "+binding.idMain.isEnabled()+"\n"+"사이드 : " + binding.flSlide.isEnabled(), Toast.LENGTH_SHORT).show();
     }
 
 }

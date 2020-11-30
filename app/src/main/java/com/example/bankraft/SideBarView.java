@@ -20,6 +20,7 @@ public class SideBarView extends ConstraintLayout implements View.OnClickListene
     public interface EventListener {
         // 닫기 버튼 클릭 이벤트
         void btnCancel();
+        void logOut();
     }
 
     public SideBarView(Context context) {
@@ -34,13 +35,21 @@ public class SideBarView extends ConstraintLayout implements View.OnClickListene
     private void init() {
         LayoutInflater.from(getContext()).inflate(R.layout.side_menu, this, true);
         findViewById(R.id.sidemenu_cancel).setOnClickListener(this);
+        findViewById(R.id.slide_logout).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
 
-        if (view.getId() == R.id.sidemenu_cancel) {
-            listener.btnCancel();
+        switch(view.getId()){
+            case R.id.sidemenu_cancel :
+                listener.btnCancel();
+                break;
+
+            case R.id.slide_logout :
+                listener.logOut();
+                break;
         }
+
     }
 }

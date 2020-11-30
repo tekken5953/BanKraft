@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="7dp"
-        android:text="아이디 기억하기"
+        android:text="이메일 기억하기"
         android:textColor="#FFFFFF"
         android:fontFamily="@font/jeju_gothic"
         android:textSize="14sp"

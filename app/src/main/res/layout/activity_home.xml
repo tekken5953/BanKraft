@@ -60,6 +60,7 @@
                 app:tint="#FFFFFF" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/user_card"
                 android:layout_width="320dp"
                 android:layout_height="200dp"
                 android:layout_marginStart="24dp"
@@ -124,16 +125,18 @@
                     <TextView
                         android:id="@+id/trading_list"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:fontFamily="@font/jeju_gothic"
                         android:text="거래내역"
+                        android:gravity="center"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/go_trading_tx"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:gravity="center"
                         android:layout_marginLeft="45dp"
                         android:fontFamily="@font/jeju_gothic"
                         android:text="이체"
@@ -141,9 +144,10 @@
                         android:textSize="16sp" />
 
                     <TextView
-                        android:id="@+id/textView13"
+                        android:id="@+id/new_account"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center"
                         android:layout_marginLeft="45dp"
                         android:fontFamily="@font/jeju_gothic"
                         android:text="새 계좌 등록"

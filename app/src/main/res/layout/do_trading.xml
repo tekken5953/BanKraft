@@ -7,11 +7,10 @@
     android:background="#FFFFFF"
     tools:context="com.example.bankraft.TradingPage">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="270dp"
         android:background="@drawable/background2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,11 +32,11 @@
         <TableRow
             android:id="@+id/trading_tableRow"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="25dp"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -45,7 +44,8 @@
             <TextView
                 android:id="@+id/do_trading_tx1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center"
                 android:fontFamily="@font/jeju_gothic"
                 android:text="최근"
                 android:textColor="@color/green"
@@ -54,7 +54,8 @@
             <TextView
                 android:id="@+id/do_trading_tx2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center"
                 android:layout_marginLeft="80dp"
                 android:fontFamily="@font/jeju_gothic"
                 android:text="자주"
@@ -64,7 +65,8 @@
             <TextView
                 android:id="@+id/do_trading_tx3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center"
                 android:layout_marginLeft="80dp"
                 android:fontFamily="@font/jeju_gothic"
                 android:text="내 계좌"
@@ -128,6 +130,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view4" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
