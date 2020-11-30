@@ -26,7 +26,8 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/notify_back"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/notify_back" />
 
         <ImageView
             android:id="@+id/notify_back"

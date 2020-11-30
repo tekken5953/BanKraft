@@ -29,6 +29,12 @@ public class HomeActivity extends AppCompatActivity {
             finish();
         });
 
+        binding.homeSearch.setOnClickListener(view1 ->{
+            Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
         binding.notification.setOnClickListener(view1 -> {
             Intent intent = new Intent(HomeActivity.this, NotificationActivity.class);
             startActivity(intent);
@@ -45,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
             SideBarView sideBarView = new SideBarView(HomeActivity.this);
             binding.viewSlidebar.addView(sideBarView);
 
-            binding.flSlide.setOnClickListener(view2 -> {
+            binding.goSidemenu.setOnClickListener(view2 -> {
                 sideBarView.setEventListener(this::closeMenu);
                 showMenu();
             });

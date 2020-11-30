@@ -35,6 +35,7 @@ public class SplashActivity extends AppCompatActivity {
 
         //Strat top animaion
         binding.splashImg.setAnimation(animation1);
+        binding.splashTx.setAnimation(animation1);
 
         new Handler().postDelayed(() -> {
             ObjectAnimator objectAnimator = ObjectAnimator.ofPropertyValuesHolder(

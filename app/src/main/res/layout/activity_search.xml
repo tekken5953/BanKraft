@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/search_back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:hint="키워드로 검색하세요!"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/search_back"
+        app:layout_constraintStart_toEndOf="@+id/search_back"
+        app:layout_constraintTop_toTopOf="@+id/search_back" />
+
+    <ImageView
+        android:id="@+id/search_do"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/search"
+        app:layout_constraintBottom_toBottomOf="@+id/search_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/autoCompleteTextView"
+        app:layout_constraintTop_toTopOf="@+id/search_back"
+        app:tint="@color/black" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
