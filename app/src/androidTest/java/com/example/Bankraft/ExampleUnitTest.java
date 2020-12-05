@@ -1,4 +1,4 @@
-package com.example.instargram;
+package com.example.Bankraft;
 
 import org.junit.Test;
 

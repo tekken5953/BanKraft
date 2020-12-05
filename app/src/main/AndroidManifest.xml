@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/BanKraft">
-        <activity android:name=".SearchActivity"/>
+        <activity android:name=".SearchActivity" />
         <activity android:name=".NewAccountAcitivity" />
         <activity android:name=".TradingListActivity" />
         <activity android:name=".NotificationActivity" />

@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/login_email_edt"
+        android:id="@+id/login_id_edt"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="24dp"
@@ -29,7 +29,7 @@
         android:background="@drawable/edit_bg"
         android:ems="10"
         android:fontFamily="@font/jeju_gothic"
-        android:hint="이메일 주소"
+        android:hint="아이디"
         android:inputType="textEmailAddress"
         android:paddingLeft="15dp"
         android:textColor="#FFFFFF"
@@ -47,17 +47,15 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/edit_bg"
-        android:ems="10"
         android:fontFamily="@font/jeju_gothic"
         android:hint="비밀번호"
         android:inputType="textPassword"
-        android:paddingLeft="15dp"
-        android:textColor="#FFFFFF"
+        android:padding="15dp"
         android:textColorHint="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_email_edt" />
+        app:layout_constraintTop_toBottomOf="@+id/login_id_edt" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -65,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="7dp"
-        android:text="이메일 기억하기"
+        android:text="아이디 기억하기"
         android:textColor="#FFFFFF"
         android:fontFamily="@font/jeju_gothic"
         android:textSize="14sp"
@@ -149,7 +147,7 @@
         android:fontFamily="@font/jeju_gothic"
         android:gravity="center_vertical"
         android:text="Facebook 으로 로그인"
-        android:textColor="#cccccc"
+        android:textColor="@color/white"
         android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -161,19 +159,19 @@
         android:layout_height="1dp"
         android:layout_marginBottom="15dp"
         android:background="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/signUp_tx"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/signUp_tx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/jeju_gothic"
         android:text="아이디가 없으신가요? 회원가입하세요!"
-        android:textColor="#cccccc"
+        android:textColor="@color/white"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
