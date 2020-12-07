@@ -3,6 +3,7 @@ package com.example.bankraft.Login;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -28,6 +29,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
@@ -52,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
 
         login_pwd.setTextColor(Color.WHITE);
 
+        //회원가입 클릭 시 이벤트
         signUpTx.setOnClickListener(view1 -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             View v = LayoutInflater.from(LoginActivity.this).inflate(R.layout.sign_up, null, false);
@@ -123,7 +129,15 @@ public class LoginActivity extends AppCompatActivity {
                             dataSnapshot.child(login_id.getText().toString()).getValue().toString();
                             if (Objects.equals(dataSnapshot.child(login_id.getText().toString()).child("id").getValue().toString(), login_id.getText().toString())) {
                                 if (Objects.equals(dataSnapshot.child(login_id.getText().toString()).child("pwd").getValue().toString(), login_pwd.getText().toString())) {
-                                    SharedPreferenceManager.setString(LoginActivity.this, "user_name", dataSnapshot.child(login_id.getText().toString()).child("name").getValue().toString());
+                                    //현재 접속 시간 측정
+                                    final Date currentTime = Calendar.getInstance().getTime();
+                                    final SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy" + "년 " + "MM" + "월 "
+                                            + "dd" + "일 " + "hh" + "시 " + "mm" + "분 " + "ss" + "초" , Locale.getDefault());
+                                    final String date = dayFormat.format(currentTime);
+
+                                    //로그인 정보 저장
+                                    SharedPreferenceManager.setString(LoginActivity.this,"enter_clock", date); //접속 시간
+                                    SharedPreferenceManager.setString(LoginActivity.this, "user_name", dataSnapshot.child(login_id.getText().toString()).child("name").getValue().toString()); //유저 이름
                                     Toast.makeText(LoginActivity.this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                     startActivity(intent);

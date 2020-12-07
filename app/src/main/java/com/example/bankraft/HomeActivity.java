@@ -76,6 +76,8 @@ public class HomeActivity extends AppCompatActivity {
                 public void logOut() {
                     Toast.makeText(HomeActivity.this, "로그아웃", Toast.LENGTH_SHORT).show();
                     //TODO 로그아웃 다이얼로그로 로그아웃
+                    SharedPreferenceManager.removeKey(HomeActivity.this,"user_name");
+                    SharedPreferenceManager.removeKey(HomeActivity.this,"enter_clock");
                     Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();

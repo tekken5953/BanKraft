@@ -28,7 +28,7 @@
         android:src="@drawable/setting" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/side_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sidemenu_cancel" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/side_clock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
@@ -49,7 +49,7 @@
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/side_user_name" />
 
 
     <Button
@@ -63,9 +63,9 @@
         android:fontFamily="@font/jeju_gothic"
         android:textColor="#000000"
         android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView18"
-        app:layout_constraintStart_toEndOf="@+id/textView18"
-        app:layout_constraintTop_toTopOf="@+id/textView18" />
+        app:layout_constraintBottom_toBottomOf="@+id/side_clock"
+        app:layout_constraintStart_toEndOf="@+id/side_clock"
+        app:layout_constraintTop_toTopOf="@+id/side_clock" />
 
     <TextView
         android:id="@+id/textView19"
