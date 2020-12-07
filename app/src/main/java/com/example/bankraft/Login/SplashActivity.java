@@ -1,4 +1,4 @@
-package com.example.bankraft;
+package com.example.bankraft.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.example.bankraft.R;
 import com.example.bankraft.databinding.ActivitySplashBinding;
 
 public class SplashActivity extends AppCompatActivity {

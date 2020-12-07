@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import com.example.bankraft.databinding.ActivitySearchBinding;
@@ -22,6 +24,11 @@ public class SearchActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_dropdown_item_1line, COUNTRIES);
+        AutoCompleteTextView textView = binding.autoCompleteTextView;
+        textView.setAdapter(adapter);
+
         binding.searchBack.setOnClickListener(view1 -> {
           Intent intent = new Intent(SearchActivity.this, HomeActivity.class);
           startActivity(intent);
@@ -30,4 +37,8 @@ public class SearchActivity extends AppCompatActivity {
 
         binding.searchDo.setOnClickListener(view1 -> Toast.makeText(SearchActivity.this, "Do Searching", Toast.LENGTH_SHORT).show());
     }
+
+    private static final String[] COUNTRIES = new String[] {
+            "test1", "test2", "test3", "test4", "test5", "test6", "test7"
+    };
 }

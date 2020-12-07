@@ -1,4 +1,4 @@
-package com.example.bankraft;
+package com.example.bankraft.Login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -7,26 +7,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.bankraft.HomeActivity;
+import com.example.bankraft.R;
+import com.example.bankraft.SharedPreferenceManager;
 import com.example.bankraft.databinding.ActivityMainBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -118,17 +120,17 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         try {
-                            if (dataSnapshot.child(login_id.getText().toString()).getValue().toString() != null) {
-                                if (dataSnapshot.child(login_id.getText().toString()).child("id").getValue().toString().equals(login_id.getText().toString())) {
-                                    if (dataSnapshot.child(login_id.getText().toString()).child("pwd").getValue().toString().equals(login_pwd.getText().toString())) {
-                                        Toast.makeText(LoginActivity.this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                        startActivity(intent);
-                                        overridePendingTransition(0, 0);
-                                        finish();
-                                    } else {
-                                        Toast.makeText(LoginActivity.this, "비밀번호가 올바르지 않습니다.", Toast.LENGTH_SHORT).show();
-                                    }
+                            dataSnapshot.child(login_id.getText().toString()).getValue().toString();
+                            if (Objects.equals(dataSnapshot.child(login_id.getText().toString()).child("id").getValue().toString(), login_id.getText().toString())) {
+                                if (Objects.equals(dataSnapshot.child(login_id.getText().toString()).child("pwd").getValue().toString(), login_pwd.getText().toString())) {
+                                    SharedPreferenceManager.setString(LoginActivity.this, "user_name", dataSnapshot.child(login_id.getText().toString()).child("name").getValue().toString());
+                                    Toast.makeText(LoginActivity.this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                    startActivity(intent);
+                                    overridePendingTransition(0, 0);
+                                    finish();
+                                } else {
+                                    Toast.makeText(LoginActivity.this, "비밀번호가 올바르지 않습니다.", Toast.LENGTH_SHORT).show();
                                 }
                             }
 

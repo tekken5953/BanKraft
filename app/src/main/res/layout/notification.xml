@@ -104,7 +104,7 @@
         android:layout_height="500dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/round_corner_black"
+        android:background="@drawable/round_corner_purple"
         android:overScrollMode="ifContentScrolls"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
