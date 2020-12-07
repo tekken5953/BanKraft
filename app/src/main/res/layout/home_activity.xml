@@ -72,17 +72,40 @@
                 app:layout_constraintTop_toBottomOf="@+id/home_search">
 
                 <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/jeju_gothic"
+                    android:text="계좌정보"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/home_user_name" />
+
+                <TextView
                     android:id="@+id/home_user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="@font/jeju_gothic"
                     android:text="유저 이름"
                     android:textColor="#000000"
-                    android:textSize="18sp"
+                    android:textSize="19sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                    app:layout_constraintStart_toEndOf="@+id/textView4"
+                    app:layout_constraintTop_toTopOf="@+id/textView4"
+                    android:src="@drawable/drop_down"
+                    app:tint="@android:color/darker_gray"/>
 
                 <TextView
                     android:id="@+id/currentCash"
@@ -91,11 +114,11 @@
                     android:fontFamily="@font/jeju_gothic"
                     android:text="현재 잔액(원)"
                     android:textColor="@color/black"
-                    android:textSize="27sp"
+                    android:textSize="25sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/tableRow"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/home_user_name" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
                 <Switch
                     android:id="@+id/switch1"
@@ -116,7 +139,6 @@
                     android:id="@+id/tableRow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="3dp"
                     android:gravity="center"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -221,8 +243,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:src="@drawable/plus"
-        android:tint="@color/purple_700"
+        android:src="@drawable/fab_icon"
+        android:tint="@color/white"
         app:backgroundTint="@color/purple_200"
         app:layout_anchor="@id/bottomAppbar" />
 

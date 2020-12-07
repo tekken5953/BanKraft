@@ -47,4 +47,12 @@ public class NotificationActivity extends AppCompatActivity {
             sbtn3.setTextColor(Color.parseColor("#FFFFFF"));
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(NotificationActivity.this, HomeActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

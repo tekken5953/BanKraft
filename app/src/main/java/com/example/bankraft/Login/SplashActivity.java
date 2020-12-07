@@ -14,15 +14,15 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import com.example.bankraft.R;
-import com.example.bankraft.databinding.ActivitySplashBinding;
+import com.example.bankraft.databinding.SplashActivityBinding;
 
 public class SplashActivity extends AppCompatActivity {
-    ActivitySplashBinding binding;
+    SplashActivityBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySplashBinding.inflate(getLayoutInflater());
+        binding = SplashActivityBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
 

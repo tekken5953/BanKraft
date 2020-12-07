@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
 import com.example.bankraft.databinding.TradingListBinding;
 
 public class TradingListActivity extends AppCompatActivity {
@@ -23,5 +24,13 @@ public class TradingListActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(TradingListActivity.this, HomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

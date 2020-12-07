@@ -3,12 +3,12 @@
     <item
         android:id="@+id/bottom_1"
         android:icon="@drawable/setting"
-        android:title="test1"/>
+        android:title="menu1"/>
 
     <item
         android:id="@+id/bottom_2"
         android:icon="@drawable/setting"
-        android:title="test2"/>
+        android:title="menu2"/>
 
     <item
         android:id="@+id/placeholder"
@@ -17,11 +17,11 @@
     <item
         android:id="@+id/bottom_3"
         android:icon="@drawable/setting"
-        android:title="test3"/>
+        android:title="menu3"/>
 
     <item
         android:id="@+id/bottom_4"
         android:icon="@drawable/setting"
-        android:title="test4"/>
+        android:title="menu4"/>
 
 </menu>

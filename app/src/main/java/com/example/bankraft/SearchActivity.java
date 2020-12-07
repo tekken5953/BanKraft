@@ -9,36 +9,44 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
-import com.example.bankraft.databinding.ActivitySearchBinding;
-import com.example.bankraft.databinding.ActivitySplashBinding;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.bankraft.databinding.SearchActivityBinding;
 
 public class SearchActivity extends AppCompatActivity {
 
-    ActivitySearchBinding binding;
+    SearchActivityBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySearchBinding.inflate(getLayoutInflater());
+        binding = SearchActivityBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_dropdown_item_1line, COUNTRIES);
+                R.layout.dropdowncustom, SEARCH_TITLE);
         AutoCompleteTextView textView = binding.autoCompleteTextView;
         textView.setAdapter(adapter);
 
         binding.searchBack.setOnClickListener(view1 -> {
-          Intent intent = new Intent(SearchActivity.this, HomeActivity.class);
-          startActivity(intent);
-          finish();
+            Intent intent = new Intent(SearchActivity.this, HomeActivity.class);
+            startActivity(intent);
+            finish();
         });
 
+        //TODO 검색어 별 액티비티로 이동
         binding.searchDo.setOnClickListener(view1 -> Toast.makeText(SearchActivity.this, "Do Searching", Toast.LENGTH_SHORT).show());
     }
 
-    private static final String[] COUNTRIES = new String[] {
-            "test1", "test2", "test3", "test4", "test5", "test6", "test7"
+    private static final String[] SEARCH_TITLE = new String[]{
+            "test > test1 > test1", "test > test2 > test2", "test > test3 > test3", "test > test4 > test4",
+            "test > test5 > test5", "test > test6 > test6", "test > test7 > test7"
     };
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(SearchActivity.this, HomeActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

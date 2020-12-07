@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="10dp"
         android:text="최근접속 : yyyy.MM.dd.hh.mm.ss"
         android:textColor="#FFFFFF"
         android:textSize="16sp"

@@ -22,7 +22,7 @@ import android.widget.Toast;
 import com.example.bankraft.HomeActivity;
 import com.example.bankraft.R;
 import com.example.bankraft.SharedPreferenceManager;
-import com.example.bankraft.databinding.ActivityMainBinding;
+import com.example.bankraft.databinding.LoginActivityBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,7 +37,7 @@ import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
-    ActivityMainBinding binding;
+    LoginActivityBinding binding;
 
     // Write a message to the database
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = LoginActivityBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
 
@@ -132,11 +132,11 @@ public class LoginActivity extends AppCompatActivity {
                                     //현재 접속 시간 측정
                                     final Date currentTime = Calendar.getInstance().getTime();
                                     final SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy" + "년 " + "MM" + "월 "
-                                            + "dd" + "일 " + "hh" + "시 " + "mm" + "분 " + "ss" + "초" , Locale.getDefault());
+                                            + "dd" + "일 " + "hh" + "시 " + "mm" + "분 " + "ss" + "초", Locale.getDefault());
                                     final String date = dayFormat.format(currentTime);
 
                                     //로그인 정보 저장
-                                    SharedPreferenceManager.setString(LoginActivity.this,"enter_clock", date); //접속 시간
+                                    SharedPreferenceManager.setString(LoginActivity.this, "enter_clock", date); //접속 시간
                                     SharedPreferenceManager.setString(LoginActivity.this, "user_name", dataSnapshot.child(login_id.getText().toString()).child("name").getValue().toString()); //유저 이름
                                     Toast.makeText(LoginActivity.this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
@@ -159,6 +159,16 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
             }
+        });
+
+        binding.findPwd.setOnClickListener(view1 -> {
+            //TODO 비밀번호찾기
+            Toast.makeText(this, "비밀번호 찾기", Toast.LENGTH_SHORT).show();
+        });
+
+        binding.loginFacebook.setOnClickListener(view1 -> {
+            //TODO FaceBook으로 로그인
+            Toast.makeText(this, "페이스북으로 로그인", Toast.LENGTH_SHORT).show();
         });
     }
 

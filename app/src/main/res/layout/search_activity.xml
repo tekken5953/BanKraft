@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:hint="키워드로 검색하세요"
+        android:textColor="@color/black"
         android:textColorHint="#000000"
         android:background="@drawable/round_corner_black"
         app:layout_constraintBottom_toBottomOf="@+id/search_back"

@@ -22,6 +22,7 @@ public class SideBarView extends ConstraintLayout implements View.OnClickListene
     public interface EventListener {
         // 닫기 버튼 클릭 이벤트
         void btnCancel();
+
         void logOut();
     }
 
@@ -41,19 +42,26 @@ public class SideBarView extends ConstraintLayout implements View.OnClickListene
         findViewById(R.id.slide_logout).setOnClickListener(this);
         TextView user_name = findViewById(R.id.side_user_name);
         TextView user_clock = findViewById(R.id.side_clock);
-        user_name.setText(SharedPreferenceManager.getString(getContext(),"user_name") + " 님");
-        user_clock.setText(SharedPreferenceManager.getString(getContext(), "enter_clock"));
+        try {
+            user_name.setText(SharedPreferenceManager.getString(getContext(), "user_name") + " 님");
+            user_clock.setText(SharedPreferenceManager.getString(getContext(), "enter_clock"));
+        } catch (Exception e) {
+            e.printStackTrace();
+            user_name.setText("세션만료. 재 로그인 필요!");
+            user_clock.setText("세션만료. 재 로그인 필요!");
+        }
+
     }
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
-        switch(view.getId()){
-            case R.id.sidemenu_cancel :
+        switch (view.getId()) {
+            case R.id.sidemenu_cancel:
                 listener.btnCancel();
                 break;
 
-            case R.id.slide_logout :
+            case R.id.slide_logout:
                 listener.logOut();
                 break;
         }
