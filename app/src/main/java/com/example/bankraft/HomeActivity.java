@@ -1,14 +1,19 @@
 package com.example.bankraft;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -115,9 +120,16 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         binding.newAccount.setOnClickListener(view1 -> {
-            Intent intent = new Intent(HomeActivity.this, NewAccountAcitivity.class);
-            startActivity(intent);
-            finish();
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            final View v = LayoutInflater.from(HomeActivity.this).inflate(R.layout.manage_account, null, false);
+            builder.setView(v);
+            final AlertDialog alertDialog = builder.create();
+            final ImageView back = v.findViewById(R.id.manage_back);
+            alertDialog.setCanceledOnTouchOutside(false);
+            back.setOnClickListener(view2 -> {
+                alertDialog.dismiss();
+            });
+            alertDialog.show();
         });
     }
 

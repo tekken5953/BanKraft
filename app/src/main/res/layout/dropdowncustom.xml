@@ -4,7 +4,7 @@
     style="?android:attr/dropDownItemStyle"
     android:textAppearance="?android:attr/textAppearanceLargePopupMenu"
     android:singleLine="true"
-    app:backgroundTint="@color/white"
+    app:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="?android:attr/listPreferredItemHeight"
     android:ellipsize="marquee" />

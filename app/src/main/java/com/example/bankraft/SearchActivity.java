@@ -38,8 +38,8 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private static final String[] SEARCH_TITLE = new String[]{
-            "test > test1 > test1", "test > test2 > test2", "test > test3 > test3", "test > test4 > test4",
-            "test > test5 > test5", "test > test6 > test6", "test > test7 > test7"
+            "test\t>\ttest1\t>\ttest1", "test\t>\ttest2\t>\ttest2", "test\t>\ttest3\t>\ttest3", "test\t>\ttest4\t>\ttest4",
+            "test\t>\ttest5\t>\ttest5", "test\t>\ttest6\t>\ttest6", "test\t>\ttest7\t>\ttest7"
     };
 
     @Override

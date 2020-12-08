@@ -12,36 +12,36 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/back"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/cancel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/black" />
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView"
-        android:layout_width="270dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_corner_black"
         android:hint="키워드로 검색하세요"
         android:textColor="@color/black"
         android:textColorHint="#000000"
-        android:background="@drawable/round_corner_black"
-        app:layout_constraintBottom_toBottomOf="@+id/search_back"
-        app:layout_constraintStart_toEndOf="@+id/search_back"
-        app:layout_constraintTop_toTopOf="@+id/search_back" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_back" />
 
     <ImageView
         android:id="@+id/search_do"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="24dp"
         android:src="@drawable/search"
-        app:layout_constraintBottom_toBottomOf="@+id/search_back"
+        app:layout_constraintBottom_toBottomOf="@+id/autoCompleteTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/autoCompleteTextView"
-        app:layout_constraintTop_toTopOf="@+id/search_back"
+        app:layout_constraintTop_toTopOf="@+id/autoCompleteTextView"
         app:tint="@color/black" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
