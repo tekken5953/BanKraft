@@ -33,7 +33,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/manage_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -50,7 +50,7 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/round_corner_black"
         android:layout_marginBottom="70dp"
-        android:layout_below="@id/textView3"
+        android:layout_below="@id/manage_user_name"
         android:layout_centerHorizontal="true">
 
         <TextView

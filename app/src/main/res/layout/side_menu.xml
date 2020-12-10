@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/sidemenu_cancel"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,27 +40,39 @@
         app:layout_constraintTop_toBottomOf="@+id/sidemenu_cancel" />
 
     <TextView
-        android:id="@+id/side_clock"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="10dp"
-        android:text="최근접속 : yyyy.MM.dd.hh.mm.ss"
+        android:layout_marginTop="15dp"
+        android:text="최근접속"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/side_user_name" />
+
+    <TextView
+        android:id="@+id/side_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="7dp"
+        android:text="yyyy.MM.dd.hh.mm.ss"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 
     <Button
         android:id="@+id/slide_logout"
         android:layout_width="67dp"
         android:layout_height="35dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/jeju_gothic"
         android:gravity="center"
         android:text="로그아웃"
-        android:fontFamily="@font/jeju_gothic"
         android:textColor="#000000"
         android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="@+id/side_clock"

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
@@ -25,6 +26,14 @@ public class SearchActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 R.layout.dropdowncustom, SEARCH_TITLE);
         AutoCompleteTextView textView = binding.autoCompleteTextView;
+        //TODO 아이템 별 액티비티 이동 구현
+        textView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+        });
+
         textView.setAdapter(adapter);
 
         binding.searchBack.setOnClickListener(view1 -> {
@@ -38,8 +47,8 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private static final String[] SEARCH_TITLE = new String[]{
-            "test\t>\ttest1\t>\ttest1", "test\t>\ttest2\t>\ttest2", "test\t>\ttest3\t>\ttest3", "test\t>\ttest4\t>\ttest4",
-            "test\t>\ttest5\t>\ttest5", "test\t>\ttest6\t>\ttest6", "test\t>\ttest7\t>\ttest7"
+            "test   >   test1   >   test1", "test   >   test2   >   test2", "test   >   test3   >   test3", "test   >   test4   >   test4",
+            "test   >   test5   >   test5", "test   >   test6   >   test6", "test   >   test7   >   test7"
     };
 
     @Override

@@ -5,6 +5,9 @@
     android:textAppearance="?android:attr/textAppearanceLargePopupMenu"
     android:singleLine="true"
     app:background="@color/white"
+    android:textSize="17sp"
+    android:fontFamily="@font/jeju_gothic"
+    android:padding="5dp"
     android:layout_width="match_parent"
     android:layout_height="?android:attr/listPreferredItemHeight"
     android:ellipsize="marquee" />

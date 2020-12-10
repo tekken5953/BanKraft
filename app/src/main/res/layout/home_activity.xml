@@ -245,8 +245,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:src="@drawable/fab_icon"
-        android:tint="@color/white"
+        app:tint="@color/white"
         app:backgroundTint="@color/purple_200"
-        app:layout_anchor="@id/bottomAppbar" />
+        app:layout_anchor="@id/bottomAppbar"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -66,10 +66,10 @@
                 android:id="@+id/do_trading_tx3"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:gravity="center"
                 android:layout_marginLeft="80dp"
                 android:fontFamily="@font/jeju_gothic"
-                android:text="내 계좌"
+                android:gravity="center"
+                android:text="유저"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp" />
 

@@ -11,7 +11,7 @@
         android:theme="@style/BanKraft">
         <activity android:name=".SearchActivity" />
         <activity android:name=".TradingListActivity" />
-        <activity android:name=".NotificationActivity" />
+        <activity android:name=".Notification.NotificationActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".TradingPage" />
         <activity android:name=".Login.SplashActivity">

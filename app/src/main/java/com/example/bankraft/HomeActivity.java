@@ -2,8 +2,6 @@ package com.example.bankraft;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -19,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bankraft.Login.LoginActivity;
+import com.example.bankraft.Notification.NotificationActivity;
 import com.example.bankraft.databinding.HomeActivityBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -34,7 +33,6 @@ public class HomeActivity extends AppCompatActivity {
         binding = HomeActivityBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-
 
         //TODO 바텀 메뉴 구성
         BottomNavigationView bottomNavigationView = binding.bottomnavigationView;
@@ -125,6 +123,8 @@ public class HomeActivity extends AppCompatActivity {
             builder.setView(v);
             final AlertDialog alertDialog = builder.create();
             final ImageView back = v.findViewById(R.id.manage_back);
+            final TextView user_name = v.findViewById(R.id.manage_user_name);
+            user_name.setText(SharedPreferenceManager.getString(this, "user_name" ) + "님의 계좌");
             alertDialog.setCanceledOnTouchOutside(false);
             back.setOnClickListener(view2 -> {
                 alertDialog.dismiss();
@@ -155,7 +155,7 @@ public class HomeActivity extends AppCompatActivity {
             binding.bottomAppbar.setEnabled(true);
             binding.fab.setEnabled(true);
             binding.bottomnavigationView.getMenu().getItem(2).setEnabled(false);
-        }, 180);
+        }, 250);
     }
 
     //메뉴 보여주기
