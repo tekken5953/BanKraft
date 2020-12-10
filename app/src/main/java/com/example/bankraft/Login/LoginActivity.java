@@ -3,7 +3,6 @@ package com.example.bankraft.Login;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,7 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.bankraft.HomeActivity;
+import com.example.bankraft.MainPage.HomeActivity;
 import com.example.bankraft.R;
 import com.example.bankraft.SharedPreferenceManager;
 import com.example.bankraft.databinding.LoginActivityBinding;

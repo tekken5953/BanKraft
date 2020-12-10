@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.bankraft.MainPage.HomeActivity;
 import com.example.bankraft.databinding.DoTradingBinding;
 
 public class TradingPage extends AppCompatActivity {

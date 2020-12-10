@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:id="@+id/home_layout"
-    tools:context="com.example.bankraft.HomeActivity">
+    tools:context="com.example.bankraft.MainPage.HomeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/id_main"
@@ -102,11 +102,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
+                    android:src="@drawable/drop_down"
                     app:layout_constraintBottom_toBottomOf="@+id/textView4"
                     app:layout_constraintStart_toEndOf="@+id/textView4"
                     app:layout_constraintTop_toTopOf="@+id/textView4"
-                    android:src="@drawable/drop_down"
-                    app:tint="@android:color/darker_gray"/>
+                    app:tint="@android:color/darker_gray" />
 
                 <TextView
                     android:id="@+id/currentCash"
@@ -181,19 +181,21 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/home_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="24dp"
-            android:background="@drawable/round_corner_purple"
+            android:background="#f6cede"
+            android:foregroundGravity="center"
+            android:orientation="horizontal"
+            android:overScrollMode="ifContentScrolls"
+            android:scrollbars="none"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:id="@+id/fl_slide"

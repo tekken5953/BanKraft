@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.bankraft.MainPage.HomeActivity;
 import com.example.bankraft.databinding.TradingListBinding;
 
 public class TradingListActivity extends AppCompatActivity {

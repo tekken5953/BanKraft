@@ -12,7 +12,7 @@
         <activity android:name=".SearchActivity" />
         <activity android:name=".TradingListActivity" />
         <activity android:name=".Notification.NotificationActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".MainPage.HomeActivity" />
         <activity android:name=".TradingPage" />
         <activity android:name=".Login.SplashActivity">
             <intent-filter>

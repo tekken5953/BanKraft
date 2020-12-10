@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
+import com.example.bankraft.MainPage.HomeActivity;
 import com.example.bankraft.databinding.SearchActivityBinding;
 
 public class SearchActivity extends AppCompatActivity {

@@ -1,10 +1,14 @@
-package com.example.bankraft;
+package com.example.bankraft.MainPage;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -18,13 +22,23 @@ import android.widget.Toast;
 
 import com.example.bankraft.Login.LoginActivity;
 import com.example.bankraft.Notification.NotificationActivity;
+import com.example.bankraft.R;
+import com.example.bankraft.SearchActivity;
+import com.example.bankraft.SharedPreferenceManager;
+import com.example.bankraft.SideBarView;
+import com.example.bankraft.TradingListActivity;
+import com.example.bankraft.TradingPage;
 import com.example.bankraft.databinding.HomeActivityBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
     Boolean isMenuShow = false;
     HomeActivityBinding binding;
+    HomePannelRecyclerAdapter mAdapter;
+    ArrayList<HomePannelRecyclerItem> mItem = new ArrayList<>();
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -86,6 +100,20 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //홈 메뉴 판넬 리사이클러뷰
+        RecyclerView recyclerView = binding.homeRecyclerView;
+        // 리사이클러뷰에 SimpleTextAdapter 객체 지정.
+        mAdapter = new HomePannelRecyclerAdapter(mItem);
+        recyclerView.setAdapter(mAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(HomeActivity.this, LinearLayoutManager.HORIZONTAL, false));
+        //리사이클러뷰에 아이템 추가
+        final int[] img = { R.drawable.dollor, R.drawable.airplain, R.drawable.money,
+                R.drawable.paper, R.drawable.piggy,R.drawable.secures};
+        for (int i = 0; i < 6; i++){
+            addItem(ResourcesCompat.getDrawable(getResources(),img[i],null),"메뉴"+i);
+            mAdapter.notifyDataSetChanged();
+        }
+
         //액티비티 이동
         binding.fab.setOnClickListener(view1 -> {
             Intent intent = new Intent(HomeActivity.this, TradingPage.class);
@@ -133,6 +161,14 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+    //RecyclerView 아이템 추가
+    public void addItem(Drawable img, String content) {
+        HomePannelRecyclerItem item = new HomePannelRecyclerItem(img, content);
+        item.setImg(img);
+        item.setHome_context(content);
+        mItem.add(item);
+    }
+
     //메뉴 닫기
     public void closeMenu() {
         isMenuShow = false;
@@ -149,7 +185,7 @@ public class HomeActivity extends AppCompatActivity {
             binding.switch1.setEnabled(true);
             binding.homeSearch.setEnabled(true);
             binding.notification.setEnabled(true);
-            binding.recyclerView.setEnabled(true);
+            binding.homeRecyclerView.setEnabled(true);
             binding.bottomAppbar.setVisibility(View.VISIBLE);
             binding.fab.setVisibility(View.VISIBLE);
             binding.bottomAppbar.setEnabled(true);
@@ -173,7 +209,7 @@ public class HomeActivity extends AppCompatActivity {
         binding.switch1.setEnabled(false);
         binding.homeSearch.setEnabled(false);
         binding.notification.setEnabled(false);
-        binding.recyclerView.setEnabled(false);
+        binding.homeRecyclerView.setEnabled(false);
         binding.bottomAppbar.setVisibility(View.GONE);
         binding.fab.setVisibility(View.GONE);
         binding.bottomAppbar.setEnabled(false);
