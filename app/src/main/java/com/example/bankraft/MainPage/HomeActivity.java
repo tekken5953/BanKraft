@@ -27,7 +27,7 @@ import com.example.bankraft.SearchActivity;
 import com.example.bankraft.SharedPreferenceManager;
 import com.example.bankraft.SideBarView;
 import com.example.bankraft.TradingListActivity;
-import com.example.bankraft.TradingPage;
+import com.example.bankraft.DoTradingPage.TradingPage;
 import com.example.bankraft.databinding.HomeActivityBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

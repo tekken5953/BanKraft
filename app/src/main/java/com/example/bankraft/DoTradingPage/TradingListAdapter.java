@@ -1,7 +1,6 @@
-package com.example.bankraft.Notification;
+package com.example.bankraft.DoTradingPage;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,29 +9,28 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bankraft.Notification.NotificationRecyclerItem;
 import com.example.bankraft.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class NotificationRecyclerAdapter extends RecyclerView.Adapter<NotificationRecyclerAdapter.ViewHolder> {
-    private ArrayList<NotificationRecyclerItem> mData;
+public class TradingListAdapter extends RecyclerView.Adapter<TradingListAdapter.ViewHolder> {
+    private ArrayList<TradingListItem> mData;
 
     // 생성자에서 데이터 리스트 객체를 전달받음.
-    NotificationRecyclerAdapter(ArrayList<NotificationRecyclerItem> list) {
+    TradingListAdapter(ArrayList<TradingListItem> list) {
         mData = list;
     }
 
     // onCreateViewHolder() - 아이템 뷰를 위한 뷰홀더 객체 생성하여 리턴.
     @NonNull
     @Override
-    public NotificationRecyclerAdapter.ViewHolder
-    onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TradingListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View view = inflater.inflate(R.layout.notification_list_item, parent, false);
-        NotificationRecyclerAdapter.ViewHolder vh = new NotificationRecyclerAdapter.ViewHolder(view);
+        View view = inflater.inflate(R.layout.do_tading_list_item, parent, false);
+        TradingListAdapter.ViewHolder vh = new TradingListAdapter.ViewHolder(view);
 
         return vh;
     }
@@ -50,18 +48,12 @@ public class NotificationRecyclerAdapter extends RecyclerView.Adapter<Notificati
 
     // onBindViewHolder() - position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시.
     @Override
-    public void onBindViewHolder(NotificationRecyclerAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(TradingListAdapter.ViewHolder holder, int position) {
 
-        NotificationRecyclerItem item = mData.get(position);
+        TradingListItem item = mData.get(position);
 
-        holder.io.setText(item.getIo());
-        holder.content.setText(item.getContent());
-        holder.price.setText(item.getPrice());
-        holder.date.setText(item.getDate());
-
-        if (position == 1)
-            holder.price.setTextColor(Color.RED);
-
+        holder.person.setText(item.getPerson());
+        holder.account.setText(item.getAccount());
     }
 
     // getItemCount() - 전체 데이터 갯수 리턴.
@@ -73,7 +65,7 @@ public class NotificationRecyclerAdapter extends RecyclerView.Adapter<Notificati
     // 아이템 뷰를 저장하는 뷰홀더 클래스.
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView io, content, price, date;
+        TextView person, account;
 
         ViewHolder(final View itemView) {
             super(itemView);
@@ -89,10 +81,9 @@ public class NotificationRecyclerAdapter extends RecyclerView.Adapter<Notificati
             });
 
             // 뷰 객체에 대한 참조. (hold strong reference)
-            io = itemView.findViewById(R.id.do_trading_name);
-            content = itemView.findViewById(R.id.do_trading_account);
-            price = itemView.findViewById(R.id.notification_recycle_price_tx);
-            date = itemView.findViewById(R.id.notification_recycle_date_tx);
+            person = itemView.findViewById(R.id.do_trading_name);
+            account = itemView.findViewById(R.id.do_trading_account);
+
         }
     }
 }

@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/notification_recycle_io_tx"
+        android:id="@+id/do_trading_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -26,16 +26,16 @@
         app:layout_constraintTop_toBottomOf="@+id/notification_recycle_date_tx" />
 
     <TextView
-        android:id="@+id/notification_recycle_content_tx"
+        android:id="@+id/do_trading_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:text="내용"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/notification_recycle_io_tx"
-        app:layout_constraintStart_toEndOf="@+id/notification_recycle_io_tx"
-        app:layout_constraintTop_toTopOf="@+id/notification_recycle_io_tx" />
+        app:layout_constraintBottom_toBottomOf="@+id/do_trading_name"
+        app:layout_constraintStart_toEndOf="@+id/do_trading_name"
+        app:layout_constraintTop_toTopOf="@+id/do_trading_name" />
 
     <TextView
         android:id="@+id/notification_recycle_price_tx"

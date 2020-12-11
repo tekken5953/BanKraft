@@ -13,7 +13,7 @@
         <activity android:name=".TradingListActivity" />
         <activity android:name=".Notification.NotificationActivity" />
         <activity android:name=".MainPage.HomeActivity" />
-        <activity android:name=".TradingPage" />
+        <activity android:name=".DoTradingPage.TradingPage" />
         <activity android:name=".Login.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

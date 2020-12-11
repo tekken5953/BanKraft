@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -36,7 +37,6 @@ public class NotificationActivity extends AppCompatActivity {
         mAdapter = new NotificationRecyclerAdapter(mItem);
         recyclerView.setAdapter(mAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(NotificationActivity.this));
-
 
         Button btn1 = binding.notifyBtn1; // 이체
         Button btn2 = binding.notifyBtn2; // 투자
@@ -70,7 +70,9 @@ public class NotificationActivity extends AppCompatActivity {
                 btn4.setTextColor(Color.parseColor("#FFFFFF"));
                 mItem.clear();
                 // 알람 아이템 추가
-                addItem("입금", "투자 이익금", "+150,000", "2020.12.10");
+                addItem("입금", "테스트 코드1", "+150,000", "2020.12.10");
+                addItem("출금", "테스트 코드2", "-50,000", "2020.12.10");
+                addItem("입금", "테스트 코드3", "+70,000", "2020.12.10");
                 nothing.setVisibility(View.GONE);
                 mAdapter.notifyDataSetChanged();
             }
@@ -110,6 +112,7 @@ public class NotificationActivity extends AppCompatActivity {
         item.setPrice(price);
         item.setDate(date);
         mItem.add(item);
+
     }
 
     @Override
@@ -119,4 +122,5 @@ public class NotificationActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 }
